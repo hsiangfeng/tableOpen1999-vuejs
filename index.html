@@ -14,12 +14,13 @@
     <style>
         .icon{
             transition: all 0.5s;
+            display: inline-block;
         }
         .inverse{
             transform: rotate(180deg);
             transition: all 0.5s;
         }
-        tr>th.click{
+        table th.click{
             cursor: pointer;
         }
     </style>
@@ -34,13 +35,13 @@
                             <th width="10%" class="click" @click="sortName = 'ZipName_',sortOrder = !sortOrder">
                                 發生區域
                                 <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'ZipName_'">
-                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                    <i class="fas fa-angle-up text-success" ></i>
                                 </span>
                             </th>
                             <th width="10%" class="click" @click="sortName = 'UnitName_',sortOrder = !sortOrder">
                                 通報單位
                                 <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'UnitName_'">
-                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                    <i class="fas fa-angle-up text-success" ></i>
                                 </span>
                             </th>
                             <th width="10%">通報地址</th>
@@ -48,7 +49,7 @@
                             <th width="10%" class="click" @click="sortName ='StatusName_',sortOrder = !sortOrder">
                                 當前狀態
                                 <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'StatusName_'">
-                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                    <i class="fas fa-angle-up text-success" ></i>
                                 </span>
                             </th>
                             <th width="10%">位置查看</th>
