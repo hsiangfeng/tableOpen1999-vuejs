@@ -1,10 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
-        dataOpen1999: '' || [],
+        dataOpen1999: [],
         GooglemapUrl: 'https://www.google.com/maps/dir/',
         distance: '20z',
-        sortName: '',
+        sortName: 'ZipName_',
         sortOrder: false,
     },
     methods: {
@@ -22,14 +22,13 @@ var app = new Vue({
     },
     computed: {
         dataSort: function () {
-            var vm = this;
-            if (vm.sortOrder) {
-                return vm.dataOpen1999.sort( (a, b) => {
-                    return a[vm.sortName] > b[vm.sortName];
+            if (this.sortOrder) {
+                return this.dataOpen1999.sort( (a, b) => {
+                    return a[this.sortName] > b[this.sortName];
                 })
-            } else if (!vm.sortOrder) {
-                return vm.dataOpen1999.sort( (a, b) => {
-                    return a[vm.sortName] < b[vm.sortName];
+            } else if (!this.sortOrder) {
+                return this.dataOpen1999.sort( (a, b) => {
+                    return a[this.sortName] < b[this.sortName];
                 })
             }
         }
