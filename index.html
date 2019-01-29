@@ -33,17 +33,23 @@
                             <th width="10%">發布時間</th>
                             <th width="10%" class="click" @click="sortName = 'ZipName_',sortOrder = !sortOrder">
                                 發生區域
-                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'ZipName_'"></i>
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'ZipName_'">
+                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                </span>
                             </th>
                             <th width="10%" class="click" @click="sortName = 'UnitName_',sortOrder = !sortOrder">
                                 通報單位
-                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'UnitName_'"></i>
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'UnitName_'">
+                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                </span>
                             </th>
                             <th width="10%">通報地址</th>
                             <th width="40%">問題回報</th>
                             <th width="10%" class="click" @click="sortName ='StatusName_',sortOrder = !sortOrder">
                                 當前狀態
-                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'StatusName_'"></i>
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'StatusName_'">
+                                    <i class="fas fa-angle-up text-success icon" ></i>
+                                </span>
                             </th>
                             <th width="10%">位置查看</th>
                         </tr>
