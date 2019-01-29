@@ -1,0 +1,11 @@
+.icon{
+    transition: all 0.5s;
+    display: inline-block;
+}
+.inverse{
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+table th.click{
+    cursor: pointer;
+}
