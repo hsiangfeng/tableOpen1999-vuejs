@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>open1999/vuejs</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <style>
+        .icon{
+            transition: all 0.5s;
+        }
+        .inverse{
+            transform: rotate(180deg);
+            transition: all 0.5s;
+        }
+        tr>th.click{
+            cursor: pointer;
+        }
+    </style>
+    <body>
+
+        <div id="app">
+            <div class="container">
+                <table class="table table-hover table-striped">
+                    <thead class="table-header">
+                        <tr class="text-center">
+                            <th width="10%">發布時間</th>
+                            <th width="10%" class="click" @click="sortName = 'ZipName_',sortOrder = !sortOrder">
+                                發生區域
+                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'ZipName_'"></i>
+                            </th>
+                            <th width="10%" class="click" @click="sortName = 'UnitName_',sortOrder = !sortOrder">
+                                通報單位
+                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'UnitName_'"></i>
+                            </th>
+                            <th width="10%">通報地址</th>
+                            <th width="40%">問題回報</th>
+                            <th width="10%" class="click" @click="sortName ='StatusName_',sortOrder = !sortOrder">
+                                當前狀態
+                                <i class="fas fa-angle-up text-success icon" :class="{'inverse':sortOrder}" v-if="sortName == 'StatusName_'"></i>
+                            </th>
+                            <th width="10%">位置查看</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template v-for="item in dataSort">
+                            <tr>
+                                <td class="align-middle text-center">{{item.Save_Date_}}</td>
+                                <td class="align-middle text-center">{{item.ZipName_}}</td>
+                                <td class="align-middle text-center">{{item.UnitName_}}</td>
+                                <td class="align-middle">{{item.address_}}</td>
+                                <td class="align-middle">{{item.BeforeDesc_}}</td>
+                                <td v-if="item.StatusName_ == '待處理'" class="text-white bg-warning align-middle text-center">{{item.StatusName_}}</td>
+                                <td v-else-if="item.StatusName_ == '待確認'" class="text-white bg-secondary align-middle text-center">{{item.StatusName_}}</td>
+                                <td v-else-if="item.StatusName_ == '解除管制'" class="text-white bg-info align-middle text-center">{{item.StatusName_}}</td>
+                                <td v-else-if="item.StatusName_ == '處理完成'" class="text-white bg-success align-middle text-center">{{item.StatusName_}}</td>
+                                <td class="align-middle text-center"><a :href="GooglemapUrl + item.Lat_ + ',' + item.Lng_ + '/@' + item.Lat_ + ',' + item.Lng_ +','+distance"
+                                        target="_blank"><i class="fas fa-map-marker-alt fa-2x"></i></a></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+        <script src="js/vue.js"></script>
+        <script src="js/all.js"></script>
+    </body>
+
+</html>
