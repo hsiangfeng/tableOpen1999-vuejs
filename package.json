@@ -1,0 +1,36 @@
+{
+  "name": "tableopen1999-vuejs",
+  "version": "1.0.0",
+  "description": "https://hsiangfeng.github.io/tableOpen1999-vuejs/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiangfeng/tableOpen1999-vuejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsiangfeng/tableOpen1999-vuejs/issues"
+  },
+  "homepage": "https://github.com/hsiangfeng/tableOpen1999-vuejs#readme",
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
+    "standard": "^12.0.1"
+  }
+}
