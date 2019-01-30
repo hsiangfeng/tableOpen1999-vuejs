@@ -4,7 +4,7 @@ const app = new Vue({
     dataOpen1999: [],
     GooglemapUrl: 'https://www.google.com/maps/dir/',
     distance: '20z',
-    sortName: 'ZipName_',
+    sortName: 'zipcode_',
     sortOrder: false
   },
   methods: {
@@ -13,8 +13,7 @@ const app = new Vue({
       window.fetch(_url, { methods: 'get' }).then(data => {
         return data.json()
       }).then(item => {
-        this.page = item.splice(0, 10).length
-        this.dataOpen1999 = item.splice(0, this.quantity)
+        this.dataOpen1999 = item.splice(0, 50)
       }).catch(error => {
         console.log('錯誤訊息' + error)
       })
@@ -35,8 +34,5 @@ const app = new Vue({
   },
   created () {
     this.dataGet()
-  },
-  beforeMount () {
-    this.dataSort()
   }
 })
