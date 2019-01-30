@@ -5,10 +5,7 @@ const app = new Vue({
     GooglemapUrl: 'https://www.google.com/maps/dir/',
     distance: '20z',
     sortName: 'ZipName_',
-    sortOrder: false,
-    page: '',
-    quantity: 5,
-    pagenumber: 0
+    sortOrder: false
   },
   methods: {
     dataGet: function () {
@@ -34,10 +31,6 @@ const app = new Vue({
           return a[this.sortName] < b[this.sortName]
         })
       }
-    },
-    dataPage: function () {
-      let vm = this
-      this.dataOpen1999 = vm.dataOpen1999.splice(this.pagenumber, this.quantity)
     }
   },
   created () {
