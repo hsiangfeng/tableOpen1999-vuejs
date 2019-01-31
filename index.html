@@ -20,9 +20,9 @@
                     <thead class="table-header">
                         <tr class="text-center">
                             <th width="10%">發布時間</th>
-                            <th width="10%" class="click" @click="sortName = 'zipcode_',sortOrder = !sortOrder">
+                            <th width="10%" class="click" @click="sortName = 'ZipName_',sortOrder = !sortOrder">
                                 發生區域
-                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'zipcode_'">
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName === 'ZipName_'">
                                     <i class="fas fa-angle-up text-success"></i>
                                 </span>
                             </th>
@@ -33,7 +33,7 @@
                             <th width="40%">問題回報</th>
                             <th width="10%" class="click" @click="sortName ='Status_',sortOrder = !sortOrder">
                                 當前狀態
-                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName == 'Status_'">
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName === 'Status_'">
                                     <i class="fas fa-angle-up text-success"></i>
                                 </span>
                             </th>

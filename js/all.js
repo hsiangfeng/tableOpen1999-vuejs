@@ -15,7 +15,7 @@ const app = new Vue({
       }).then(item => {
         this.dataOpen1999 = item.splice(0, 50)
       }).catch(error => {
-        console.log('錯誤訊息' + error)
+        window.alert('錯誤訊息:' + error)
       })
     }
   },
