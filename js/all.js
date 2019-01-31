@@ -23,11 +23,11 @@ const app = new Vue({
     dataSort: function () {
       if (this.sortOrder) {
         return this.dataOpen1999.sort((a, b) => {
-          return a[this.sortName] > b[this.sortName]
+          return a[this.sortName] - b[this.sortName]
         })
       } else if (!this.sortOrder) {
         return this.dataOpen1999.sort((a, b) => {
-          return a[this.sortName] < b[this.sortName]
+          return b[this.sortName] - a[this.sortName]
         })
       }
     }
