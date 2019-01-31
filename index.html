@@ -20,9 +20,9 @@
                     <thead class="table-header">
                         <tr class="text-center">
                             <th width="10%">發布時間</th>
-                            <th width="10%" class="click" @click="sortName = 'ZipName_',sortOrder = !sortOrder">
+                            <th width="10%" class="click" @click="sortName = 'zipcode_',sortOrder = !sortOrder">
                                 發生區域
-                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName === 'ZipName_'">
+                                <span class="icon" :class="{'inverse':sortOrder}" v-if="sortName === 'zipcode_'">
                                     <i class="fas fa-angle-up text-success"></i>
                                 </span>
                             </th>
